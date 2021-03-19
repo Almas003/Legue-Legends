@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+	<title>LOL WIKI</title>
+	<link rel="shortcut icon" type="png" href="123456.png">
+	<link rel="stylesheet" type="text/css" href="scc/style.css">
+<script type="text/javascript" src="quiz.js">
+
+</script>
+
+</head>
+<body>
+	<div class="block" id="up">
+			<a href="index.html" target="_blank"><img class="logo" src="images/pngegg.png"></a>
+			<a href="page.html" target="_blank"><img class="type_of_heroes" src="images/Adk.png"></a>
+			<a href="page.html" target="_blank"><img  class="type_of_heroes" src="images/support.png"></a>
+			<a href="page.html" target="_blank"><img  class="type_of_heroes" src="images/fighter.png"></a>
+			<a href="page.html" target="_blank"><img  class="type_of_heroes" src="images/mage.png"></a>
+			<a href="page.html" target="_blank"><img  class="type_of_heroes" src="images/assasin.png"></a>
+			<a href="page.html" target="_blank"><img  class="type_of_heroes" src="images/tank.png"></a>
+	</div>
+
+
+
+
+		<div class="block2">
+      <h1>Check your knowledge</h1>
+      <form name="quiz" id="quiz">
+        <div >
+          <p>1.In lst season in the rating Who is the most popular archer?</p>
+          <p><input type="radio" name="question1" value="Kai'sa"  >A.Kai'sa</p>
+          <p><input type="radio" name="question1" value="Jihn">B.Jihn</p>
+          <p><input type="radio" name="question1" value="Varus">C.Varus</p>
+          <p><input type="radio" name="question1" value="Kai'sa">D.Keitlin</p>
+        </div>
+        <div >
+          <p>2.Reload timo of flash?</p>
+          <p><input type="radio" name="question2" value="180s"  >A.180s</p>
+          <p><input type="radio" name="question2" value="200s">B.200s</p>
+          <p><input type="radio" name="question2" value="300s">C.300s</p>
+          <p><input type="radio" name="question2" value="360s">D.360s</p>
+        </div>
+
+        <div >
+          <p>3.who is the most popular jungler?</p>
+          <p><input type="radio" name="question3" value="nocturne"  >A.nocturne</p>
+          <p><input type="radio" name="question3" value="volobear">B.volobear</p>
+          <p><input type="radio" name="question3" value="ka'ziks">C.ka'ziks</p>
+          <p><input type="radio" name="question3" value="gekarim">D.gekarim</p>
+        </div>
+        <div >
+          <p>4.Who is the most popular player?</p>
+          <p><input type="radio" name="question4" value="Xin sho"  >A.Xin sho</p>
+          <p><input type="radio" name="question4" value="Faker">B.Faker</p>
+          <p><input type="radio" name="question4" value="Jun master">C.Jun master</p>
+          <p><input type="radio" name="question4" value="Lee">D.Lee</p>
+        </div>
+        <div >
+          <p>5.which teem won world cup in 2020?</p>
+          <p><input type="radio" name="question5" value="Unicorn one love"  >A.Unicorn one love</p>
+          <p><input type="radio" name="question5" value="gambit">B.gambit</p>
+          <p><input type="radio" name="question5" value="T1">C.T1</p>
+          <p><input type="radio" name="question5" value="Dam won gaming">D.Dam won gaming</p>
+        </div>
+        <div >
+          <p>6.First negative hero in lol ?</p>
+          <p><input type="radio" name="question6" value="Le blan"  >A.Le blan</p>
+          <p><input type="radio" name="question6" value="Sailas">B.Sailas</p>
+          <p><input type="radio" name="question6" value="Mardekaiser">C.Mardekaiser</p>
+          <p><input type="radio" name="question6" value="Tresh">D.Tresh</p>
+        </div>
+        <div >
+          <p>7.Which music group participste in world cup 2014?</p>
+          <p><input type="radio" name="question7" value="Black pink"  >A.Black pink</p>
+          <p><input type="radio" name="question7" value="21pilots">B.21pilots</p>
+          <p><input type="radio" name="question7" value="Maroon5">C.Maroon5</p>
+          <p><input type="radio" name="question7" value="Imagine dragons">D.Imagine dragons</p>
+        </div>
+
+        <input type="button" name="" value="I'm done!" onclick="check()">
+      </form>
+      </div>
+
+	<footer class="footer">
+		<a href="https://www.instagram.com/leagueoflegends/" target="_blank"><img class="mail" src="images/icons8-instagram-64.png"></a>
+			<a href="https://na.leagueoflegends.com/en-us/" target="_blank"><img class="mail" src="images/icons8-search-in-browser-100.png"></a>
+			<a href="https://www.youtube.com/user/RiotGamesInc" target="_blank"><img class="mail" src="images/icons8-youtube-128.png"></a>
+<a href="#up" ><img class="up" src="images/icons8-up-100.png"></a>
+	</footer>
+  <script>
+    function check(){
+    var c=0;
+    var q1=document.quiz.question1.value;
+    if (q1=="Kai'sa") {c++};
+    var q1=document.quiz.question2.value;
+    if (q1=="180s") {c++};
+    var q1=document.quiz.question3.value;
+    if (q1=="ka'ziks") {c++};
+    var q1=document.quiz.question4.value;
+    if (q1=="Faker") {c++};
+    var q1=document.quiz.question5.value;
+    if (q1=="Dam won gaming") {c++};
+    var q1=document.quiz.question6.value;
+    if (q1=="Le blan") {c++};
+    var q1=document.quiz.question7.value;
+    if (q1=="Imagine dragons") {c++};
+		if (c>3){document}
+      document.write(c);
+
+
+    }
+
+  </script>
+</body>
+</html>

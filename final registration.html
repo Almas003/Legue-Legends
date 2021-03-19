@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" type="text/css" href="ENDprj.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+  function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }      
+  
+  $(document).on('click', '#register_but', function () {
+            var name = $('#name_reg').val();
+            var email = $('#email_reg').val();
+            var password = $('#password_reg').val();
+            var password_rep = $('#password_dup_reg').val();
+        
+            if(password != password_rep){
+                $('.hidden-error-block').html('The entered passwords do not match').css('color', 'red');
+                return false;
+            }
+            else if(password.length < 8){
+                $('.hidden-error-block').html('Password does not match the requirements').css('color', 'red');
+                return false;
+            }
+            else if(name == ''){
+                $('.hidden-error-block').html('You have to fill out all input boxes').css('color', 'red');
+                return false;
+            }
+            else if(email == ''){
+                $('.hidden-error-block').html('You have to fill out all input boxes').css('color', 'red');
+                return false;
+            }
+            else if(!validateEmail(email)){
+                $('.hidden-error-block').html('Email address you entered is not valid').css('color', 'red');
+                return false;
+            }
+
+            else if( (password == password_rep) && (password.length > 7) && (password.match(/\d/)) && (password.match(/[A-Z]/)) && (password.match(/[A-z]/)) ){
+                 $('.hidden-error-block').html(location.href='file:///C:/Users/user/Desktop/project1/index.html').css('color', '#eaeaea');
+            }else{
+                $('.hidden-error-block').html('Password does not match the requirements').css('color', 'red');
+            }
+        });
+  
+  $('#password_dup_reg').keyup(function () {
+        var pas = $('#password_reg').val();
+        var con_pas = $(this).val();
+        if(pas === con_pas){
+            $('.register_inp').css('border-color', 'seagreen');
+        }else{
+            $('.register_inp').css('border-color', 'red');
+        }
+    });
+    $('#password_reg').keyup(function () {
+        var pswd = $('#password_reg').val();
+        if ( pswd.length < 8 ) {
+            $('#length').removeClass('valid').addClass('invalid');
+        } else {
+            $('#length').removeClass('invalid').addClass('valid');
+        }
+        //validate letter
+        if ( pswd.match(/[A-z]/) ) {
+            $('#letter').removeClass('invalid').addClass('valid');
+        } else {
+            $('#letter').removeClass('valid').addClass('invalid');
+        }
+
+        if ( pswd.match(/[A-Z]/) ) {
+            $('#capital').removeClass('invalid').addClass('valid');
+        } else {
+            $('#capital').removeClass('valid').addClass('invalid');
+        }
+
+        if ( pswd.match(/\d/) ) {
+            $('#number').removeClass('invalid').addClass('valid');
+        } else {
+            $('#number').removeClass('valid').addClass('invalid');
+        }
+    }).focus(function() {
+        $('#pswd_info').show(500);
+    }).blur(function() {
+        $('#pswd_info').hide(500);
+    });
+}); 
+	
+
+
+	</script>
+</head>
+<body>
+	<div class="big-black-block">
+    <div class="register-block">
+  
+         <p class="login-button" id="reg-hide">Registration</p>
+      
+        <div class="input-block" id="input-block-register">
+
+                <input type="text" name="first_name" id="name_reg" placeholder="First name" required />
+                <input type="text" name="last_name" id="name_reg" placeholder="Last name" required>
+                <input type="email" name="email" id="email_reg" placeholder="E-mail" required />
+                <input type="password" class="register_inp" name="password_reg" id="password_reg" placeholder="Password" required>
+                <ul id="pswd_info">
+                    <li id="letter" class="invalid">At least one letter</li>
+                    <li id="capital" class="invalid">At least one capital letter</li>
+                    <li id="number" class="invalid">At least one number</li>
+                    <li id="length" class="invalid">Be at least 8 characters</li>
+                </ul>
+                <input type="password" class="register_inp" name="password_duplicate_reg" id="password_dup_reg" placeholder="Retype password">
+                <input type="hidden" id="input-from-bot-reg">
+                <button id="register_but">Sign up</button>
+
+        </div>
+    
+        <p class="hidden-error-block"></p>
+       
+    </div>
+</div>
+</body>
+</html>
